@@ -1,5 +1,7 @@
 package com.info.customer.telecom.kool.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,9 +32,10 @@ public class CustomerProfileInformationService {
 	
 	public CustInfoServiceResponse getCustInfo(String custId)
 	{
-		if(repository.findById(custId).isPresent())
+		Optional<CustInfo> custDetails = repository.findById(custId);
+		if(custDetails.isPresent())
 		{
-			custInfo = repository.findById(custId).get();
+			custInfo = custDetails.get();
 			custInfoResponse.setCustInfo(custInfo);
 			
 			if(null != custInfo)

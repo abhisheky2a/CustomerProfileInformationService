@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.info.customer.telecom.kool.response.CustInfoServiceResponse;
 import com.info.customer.telecom.kool.service.CustomerProfileInformationService;
 
+import io.swagger.annotations.Api;
+
+@Api(value="CustomerProfileInformationServiceController", description="CRUD Operations on Complete Customer Profile")
 @RestController
 public class CustomerProfileInformationServiceController {
 	
